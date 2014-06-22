@@ -1,0 +1,34 @@
+{
+  "name": "bitbucket-pull-request-connector",
+  "version": "0.0.0",
+  "description": "Send BitBucket pull request notifications to a chat service (such as HipChat).",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kfr2/bitbucket-pull-request-connector"
+  },
+  "keywords": [
+    "bitbucket",
+    "hipchat",
+    "chatops"
+  ],
+  "author": "Kevin Richardson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kfr2/bitbucket-pull-request-connector/issues"
+  },
+  "homepage": "https://github.com/kfr2/bitbucket-pull-request-connector",
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.4.4",
+    "logfmt": "^1.1.2",
+    "node-hipchat": "^0.4.5",
+    "spice": "^1.0.2"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
