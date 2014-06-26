@@ -6,7 +6,7 @@ module.exports = function() {
             '{:pullRequestAuthor} has <b>created</b> a pull request entitled \"<a href="{:pullRequestUrl}">{:pullRequestName}</a>\" for {:repoName} (<i>{:repoSourceName} -> {:repoDestinationName}</i>).',
             {
                 pullRequestAuthor: pr.author.display_name,
-                pullRequestUrl: pr.links.html.href,
+                pullRequestUrl: pr.links.html.href.replace('api.bitbucket.org', 'bitbucket.org'),
                 pullRequestName: pr.title,
                 repoName: pr.source.repository.name,
                 repoSourceName: pr.source.branch.name,
@@ -65,10 +65,11 @@ module.exports = function() {
 
     var mergedMessage = function(pr) {
         var out = spice(
-            '{:pullRequestAuthor} has <b>merged</b> the pull request entitled "{:pullRequestName}" for <a href="http://bitbucket.org/{:repoName}">{:repoName}</a> (<i>{:repoSourceName} -> {:repoDestinationName}</i>).',
+            '{:pullRequestAuthor} has <b>merged</b> the pull request entitled "{:pullRequestName}" for <a href="http://bitbucket.org/{:repoFullName}">{:repoName}</a> (<i>{:repoSourceName} -> {:repoDestinationName}</i>).',
             {
                 pullRequestAuthor: pr.author.display_name,
                 pullRequestName: pr.title,
+                repoFullName: pr.destination.repository.full_name,
                 repoName: pr.destination.repository.name,
                 repoSourceName: pr.source.branch.name,
                 repoDestinationName: pr.destination.branch.name

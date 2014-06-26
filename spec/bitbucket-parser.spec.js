@@ -9,6 +9,7 @@ describe('generateMessage', function() {
         var data = JSON.parse(fs.readFileSync('spec/pr_actions/created.json', encoding='utf8'));
         var out = parser.generateMessage(data);
         expect(out).toMatch('created');
+        expect(out).not.toMatch('api.bitbucket.org');
         expect(out).not.toMatch('<b>Reviewers:</b>');
     });
 
@@ -41,6 +42,7 @@ describe('generateMessage', function() {
         var data = JSON.parse(fs.readFileSync('spec/pr_actions/merged.json', encoding='utf8'));
         var out = parser.generateMessage(data);
         expect(out).toMatch('merged');
+        expect(out).toMatch('evzijst/bitbucket2');
     });
 
     it('should return undefined if passed unknown pull request action', function() {
