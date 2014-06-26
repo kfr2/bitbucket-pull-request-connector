@@ -1,6 +1,8 @@
 # bitbucket-pull-request-connector
 bitbucket-pull-request-connector is a node application that accepts Bitbucket pull request POST hooks and sends appropriate messages over notification services.
 
+![Build Status](https://travis-ci.org/kfr2/bitbucket-pull-request-connector.svg)
+
 ## License
 This project is released under The ISC License. See `LICENSE.md` for more information.
 
